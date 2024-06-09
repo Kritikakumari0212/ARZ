@@ -1,0 +1,3 @@
+Welcome to 'The Army Recruitment Zone,' a dynamic and bilingual web-based application dedicated to providing comprehensive information for individuals aspiring to join the Indian Army.😃
+ This project addresses the critical need for a centralized platform offering detailed insights into the recruitment process, upcoming rallies, and results. The primary goal is to empower candidates with accurate and timely updates, ensuring they are well-informed about qualification requirements, recruitment procedures, and the Army Recruitment Offices (AROs) in their respective states. 
+ The client of this project is Recruiting Zone, Lucknow for Uttar Pradesh and Uttarakhand. 
