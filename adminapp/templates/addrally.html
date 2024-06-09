@@ -1,0 +1,56 @@
+{% extends "adminparent.html" %}
+<!-- {% load static %} -->
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Rallies</h1>
+            {% if msg %}
+            <div class="alert alert-dark" role="alert">{{msg}}</div>
+            {% endif %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table w-75 mx-auto">
+                    <tr>
+                        <td>Enter Location</td>
+                        <td>
+                            <input type="text" name="location" class="form-control text-light">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Upload</td>
+                        <td>
+                            <input type="file" name="rallyfile" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>   
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table text-light">
+                <tr>
+                    <th>Notification Text</th>
+                    <th>Posted Date</th>
+                    <th>Delete</th>
+                </tr>
+                {% for r in ral %}
+                <tr>
+                    <td>{{r.location}}</td>
+                    <td>{{r.rallydate}}</td>
+                    <td>{{r.rallyfile}}</td>
+                    <td>
+                        <a href="{% url 'adminapp:delral' id=r.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

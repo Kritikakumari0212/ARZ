@@ -1,0 +1,52 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Manage Results</h1>   
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table w-75 mx-auto">
+                    <tr>
+                        <td>Result Text</td>
+                        <td>
+                            <input type="text" name="resultDate" class="form-control text-light">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Upload ResultFile</td>
+                        <td>
+                            <input type="file" name="resultfile" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </td>
+                    </tr>
+                </table>
+            </form> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table text-light">
+                <tr>
+                    <th>Notification Text</th>
+                    <th>Posted Date</th>
+                    <th>Delete</th>
+                </tr>
+                {% for n in rel %}
+                <tr>
+                    <td>{{n.resultdate}}</td>
+                    <td>{{n.resultfile}}</td>
+                    <td>
+                        <a href="{% url 'adminapp:delrel' id=n.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARMY RECRUITING ZONE</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/logo.png' %}"
+      type="image/x-icon"
+    />
+    <style>
+      body{
+        overflow-x: hidden;
+      }
+      .nav-link {
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: #ffffff;
+        padding: 16px 0px;
+        margin: 0px 20px;
+        display: inline-block;
+        position: relative;
+        opacity: 0.75;
+        font-family: monotype corsiva;
+
+      }
+      .nav-link:hover {
+        opacity: 1;
+      }
+      .nav-link::before {
+        transition: 300ms;
+        height: 5px;
+        content: "";
+        position: absolute;
+        background-color: #ffffff;
+      }
+      .nav-link-ltr::before {
+        width: 0%;
+        bottom: 10px;
+      }
+
+      .nav-link-ltr:hover::before {
+        width: 100%;
+      }
+      .background-video {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #bgVideo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(60%);
+      }
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        z-index: 1;
+      }
+      .cont {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+      }
+
+      .content h1 {
+        font-size: 5rem;
+        text-shadow: 1px 1px 2px black, 0 0 25px rgb(28, 70, 7),
+          0 0 5px rgb(2, 43, 9);
+        text-align: center;
+        margin-top: 200px;
+      }
+      .content p{
+        color: white;
+        text-align: center;
+        margin-top: 25px;
+        font-size: 30px;
+        font-family: monotype corsiva;
+        text-shadow: 1px 1px 2px black, 0 0 25px rgb(28, 70, 7),
+          0 0 5px rgb(2, 43, 9);
+      }
+      .cont p {
+        font-size: 6.5rem;
+        color: rgb(0, 0, 0);
+        font-family: monotype corsiva;
+      }
+
+      .background-image {
+        height: 800px;
+        width: 1500px;
+        object-fit: contain;
+        overflow: hidden;
+        position: relative;
+      }
+      .zoom {
+  padding: 50px;
+  transition: transform .2s; 
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.3); 
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row sticky-top">
+        <div class="col-sm-12 p-0">
+          <nav
+            class="navbar navbar-expand-lg"
+            style="opacity: 2.8rem; background-color: rgb(7, 51, 7)"
+          >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'ARZapp:index' %}"
+                ><img src="{% static 'images/logo.png' %}" alt="" height="50"
+       
+        /><span style="color: white;  font-family: monotype corsiva; margin-left: 10px; font-size: xx-large;">Army Recruiting Zone</span></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active text-light nav-link-ltr"
+                      aria-current="page"
+                      href="{% url 'ARZapp:index' %}"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="#C1"
+                      >About Us</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:registration' %}"
+                      >Register</a
+                    >
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:contactus' %}"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:viewrally' %}"
+                      >Rally</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:viewresult' %}"
+                      >Result</a
+                    >
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:adminlogin' %}"
+                      >Login</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 background-video">
+          <video autoplay muted loop id="bgVideo">
+            <source src="{% static 'videos/1.mp4' %}" type="video/mp4" />
+          </video>
+        </div>
+        <div class="content">
+          <h1>Army Recruiting Zone</h1>
+          <div class="hr" style="border: 1px solid rgb(255, 255, 255); width: 800px; margin-left: 340px; box-shadow: 1px 1px 2px black, 0 0 25px rgb(28, 70, 7),
+          0 0 5px rgb(2, 43, 9);"></div>
+          <div class="div">
+          <div class="col-sm-12">
+          <p>Empowering Futures, Defending Legacies: 
+            Join Us at the Army Recruiting Zone.</p>
+
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="C1">
+        <div class="col-sm-12 p-0 position-relative">
+          <img src="{% static 'images/g2.jpg' %}" class="w-100" />
+          <div class="cont row w-100">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4" ><p>About Us</p></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-4 zoom" style="margin-bottom: 250px;"><span style="font-family: monotype corsiva; font-size: 20px; text-align: justify; color:rgb(0, 0, 0);"><b>Welcome to the Army Recruiting Zone, where we are dedicated to building the future of our nation's defense. As a vital component of the armed forces, our mission is to identify, attract, and enlist the best and brightest individuals to serve their country with honor, courage, and commitment.At Army Recruiting Zone, we strive to embody the core values of the Army: loyalty, duty, respect, selfless service, honor, integrity, and personal courage. Our team of experienced recruiters is passionate about matching talented individuals with rewarding career opportunities that align with their skills, interests, and aspirations.</b></div></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12" style="min-height: 250px;">
+          {% block body %} {% endblock body %}
+        </div>
+      </div>
+      <div class="row text-light" style="background-color: rgb(7, 51, 7)">
+        <div class="col-sm-12">
+          <div class="row text-center mt-3 C22">
+            <div class="col-sm-1 p-3"></div>
+            <div class="col-sm-2 p-3 C2">
+              <a href="https://www.india.gov.in/"style="text-decoration: none; color: white;">
+                <p>National Portal Of India</p>
+              </a>
+            </div>
+            <div class="col-sm-2 p-3 C2">
+              <a href="https://mod.gov.in/"style="text-decoration: none; color: white;"><p>Ministry Of Defence</p></a>
+            </div>
+            <div class="col-sm-2 p-3 C2">
+              <a href="https://www.joinindianarmy.nic.in/default.aspx"style="text-decoration: none; color: white;"><p>Indian Army</p></a>
+            </div>
+            <div class="col-sm-2 p-3 C2">
+              <a href="https://www.joinindiannavy.gov.in/"style="text-decoration: none; color: white;">
+                <p>Indian Navy</p>
+              </a>
+            </div>
+            <div class="col-sm-2 p-3 C2">
+             <a href="{% url 'ARZapp:contactus' %}" style="text-decoration: none; color: white;" ><p >Contact Us</p></a> 
+            </div>
+            <div class="col-sm-1 p-3"></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-3">
+              <div class="row">
+                <div class="col-sm-1" style="margin-top: 140px; margin-left: 100px;">
+                  <i class="fa-solid fa-phone-volume" style="color: white;"></i>
+                </div>
+                <div class="col-sm-1" style="margin-top: 140px;">
+                  -01123356780
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-1" style="margin-top: 20px;  margin-left: 100px;">
+                  <i class="fa-solid fa-phone-volume" style="color: white"></i>
+                </div>
+                <div class="col-sm-1" style="margin-top: 20px">
+                  -01123356780
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <img src="{% static 'images/2.png' %}" style="height: 400px; width: 460px;"
+            </div></div>
+            <div class="col-sm-3" style="margin-top:-40px;">
+              <div class="row">
+              <div class="col-sm-1" style="margin-top: 140px; margin-left: 100px;">
+              </div>
+              <div class="col-sm-4" style="margin-top: 140px;">
+                <a href="#C1" style="text-decoration: none; color: white;">About Us</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-1" style="margin-top: 20px;  margin-left: 100px;">
+                
+              </div>
+              <div class="col-sm-1" style="margin-top: 20px">
+                <a href="{% url 'ARZapp:registration' %}"style="text-decoration: none; color: white;">Register</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-1" style="margin-top: 20px;  margin-left: 100px;">
+                
+              </div>
+              <div class="col-sm-1" style="margin-top: 20px">
+                <a href="{% url 'ARZapp:viewrally' %}"style="text-decoration: none; color: white;">Rally</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-1" style="margin-top: 20px;  margin-left: 100px;">
+                
+              </div>
+              <div class="col-sm-1" style="margin-top: 20px">
+                <a href="{% url 'ARZapp:viewresult' %}" style="text-decoration: none; color: white;">Result</a>
+              </div>
+            </div>
+        
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

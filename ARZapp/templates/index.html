@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="row" >
+    <div class="col-sm-4 border mx-auto" style="min-height: 200px; margin-top: 25px; background-color: red;">
+        <h1 class=""><p style="color: white; text-align: center;">Notices</p></h1>
+        {% for n in notice %}
+        <marquee behavior="" direction="right" style="color: white;">{{n.notification}}</marquee>
+        {% endfor %}
+    </div>
+    <!-- <div class="col-sm-3"><div class="card rounded-0 h-100  bg-dark-subtle bg-opacity-75">
+        <div class="card-body">
+          <h6 class="">Videos</h6>
+          <img src="static/images/indian_army.jpg" class="" width="110%" height="200"
+            style="margin-left: -16px; margin-bottom: -40px;" alt="">
+
+        </div>
+        <span class="py-2 ps-2 bg-light">View All Videos</span>
+      </div></div>
+      <div class="col-sm-3"><div class="card rounded-0 h-100  bg-dark-subtle bg-opacity-75">
+        <div class="card-body">
+          <h6 class="">Photo Gallery</h6>
+          <img src="static/images/army1.avif" width="113%" height="200" style="margin-left: -16px; margin-bottom: -40px;"
+            alt="">
+        </div>
+        <span class="py-2 ps-2 bg-light">View All Photos</span>
+      </div></div> -->
+</div>
+
+{% endblock body %}

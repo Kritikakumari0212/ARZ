@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+	<style>
+		/* contact */
+svg {
+	height: 23rem;
+	margin-right: 4rem;
+}
+
+#envelope {
+  animation: float 2s ease-in-out infinite;
+}
+
+#star1, #star2, #star3, #star4, #star5, #star6 {
+  animation: blink 1s ease-in-out infinite;
+}
+#star2 { animation-delay: 100ms; }
+#star3 { animation-delay: 500ms; }
+#star4 { animation-delay: 700ms; }
+#star5 { animation-delay: 300ms; }
+#star6 { animation-delay: 200ms }
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+	
+  .form-control {
+    background-color: #f2f6f8;
+		border-radius: 2rem;
+    border: none;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+		
+    &.thick {
+      height: 3.3rem;
+      padding: .5rem 3.5rem;
+    }
+		
+		&:focus {
+			background-color: #f2f6f8;
+			border: none;
+			box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+		}
+  }
+	
+	.message .form-control {
+			padding: .5rem 1.8rem;
+	}
+	
+  ::placeholder {
+    font-family: 'Quicksand', sans-serif;
+		font-weight: 300;
+    font-size: 1.1rem;
+    color: #838788;
+    position: relative;
+    left: 0;
+  }
+	
+  input,
+  textarea {
+		font-family: 'Quicksand', sans-serif;
+    color: #212529;
+    font-size: 1.1rem;
+  }
+	
+  .icon {
+    color: #57565c;
+    height: 1.3rem;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.1rem;
+  }
+
+
+.btn.btn-primary {
+  font-family: 'Quicksand', sans-serif;
+	font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-image:linear-gradient(131deg, #ffd340, #ff923c, #ff923c, #ff923c);
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.btn-primary:hover:enabled {
+  box-shadow: 0 0.5em 0.5em -0.4em #ff923cba;
+  background-size: 100% 100%;
+  transform: translateY(-0.15em);
+}
+.nav-link {
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: none;
+        color: #ffffff;
+        padding: 16px 0px;
+        margin: 0px 20px;
+        display: inline-block;
+        position: relative;
+        opacity: 0.75;
+        font-family: monotype corsiva;
+
+      }
+      .nav-link:hover {
+        opacity: 1;
+      }
+      .nav-link::before {
+        transition: 300ms;
+        height: 5px;
+        content: "";
+        position: absolute;
+        background-color: #ffffff;
+      }
+      .nav-link-ltr::before {
+        width: 0%;
+        bottom: 10px;
+      }
+
+      .nav-link-ltr:hover::before {
+        width: 100%;
+      }
+	</style>
+  </head>
+
+  <body>
+    {% load static %}           
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 p-0">
+          <nav
+            class="navbar navbar-expand-lg"
+            style="opacity: 2.8rem; background-color: rgb(7, 51, 7)"
+          >
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{% url 'ARZapp:index' %}"
+                ><img src="{% static 'images/logo.png' %}" alt="" height="50"
+       
+        /><span style="color: white;  font-family: monotype corsiva; margin-left: 10px; font-size: xx-large;">Army Recruiting Zone</span></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active text-light nav-link-ltr"
+                      aria-current="page"
+                      href="{% url 'ARZapp:index' %}"
+                      >Home</a
+                    >
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:registration' %}"
+                      >Register</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:contactus' %}"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:viewrally' %}"
+                      >Rally</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:viewresult' %}"
+                      >Result</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-light nav-link-ltr"
+                      href="{% url 'ARZapp:adminlogin' %}"
+                      >Login</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+<div class="row">
+    <h1 class="text-center text-primary" style="margin-top: 20px;">Rallies</h1>
+    {% for r in ral %}
+    <div class="col-sm-9 mx-auto">
+        <div class="card shadow p-3" style="margin-top: 10px;">
+            <h4>{{r.location}}</h4>
+            <h4>{{r.rallydate}}</h4>
+            <button class="btn"><a href="{{r.rallyfile.url}}" target="_blank" class="btn btn-success">View</a></button>
+        </div>
+    </div>
+    {% endfor %}
+</div>

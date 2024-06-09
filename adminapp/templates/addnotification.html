@@ -1,0 +1,52 @@
+{% extends "adminparent.html" %}
+<!-- {% load static %} -->
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Notifications</h1>   
+            <p class="text-center text-danger">Welcome to No. 1 Army Portal  2024</p>
+            {% if msg %}
+            <div class="alert alert-dark" role="alert">{{msg}}</div>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+   <table class="table">
+    <tr>
+        <td>Enter Notification Text</td>
+        <td>
+            <textarea name="addnotification" class="form-control text-light"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button type="submit" class="btn btn-success">Add</button>
+        </td>
+    </tr>
+    </table>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table text-light">
+                <tr>
+                    <th>Notification Text</th>
+                    <th>Posted Date</th>
+                    <th>Delete</th>
+                </tr>
+                {% for n in note %}
+                <tr>
+                    <td>{{n.notification}}</td>
+                    <td>{{n.posteddate}}</td>
+                    <td>
+                        <a href="{% url 'adminapp:delnote' id=n.id %}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

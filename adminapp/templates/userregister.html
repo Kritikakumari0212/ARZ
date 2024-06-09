@@ -1,0 +1,38 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Registered User</h1>   
+        </div>
+    </div>
+<div class="table-responsive">
+    <table class="table border">
+        <tr>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>Contact</td>
+            <td>Email</td>
+            <td>Adhar No</td>
+            <td>Pan No</td>
+            <td>Qualification</td>
+            <td>D.O.B</td>
+        </tr>
+
+        {% for u in user %}
+        <tr>
+            <td>{{u.name}}</td>
+            <td>{{u.gender}}</td>
+            <td>{{u.address}}</td>
+            <td>{{u.city}}</td>
+            <td>{{u.contactno}}</td>
+            <td>{{u.emailaddress}}</td>
+            <td>{{u.aadharno}}</td>
+            <td>{{u.panno}}</td>
+            <td>{{u.qualification}}</td>
+            <td>{{u.dob}}</td>
+        </tr>
+        {% endfor %}
+    </table></div>
+{% endblock %}
